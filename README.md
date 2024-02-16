@@ -4,7 +4,7 @@ Switch between two KDE Plasma panel profiles on the fly
 
 ## Demo
 
-<video controls src="screenshots/demo.mp4" title="Title"></video>
+https://github.com/luisbocanegra/plasma-panel-modes-switcher/assets/15076387/ee9fa2c4-867d-4cf8-abc5-86bcfaa90031
 
 <details>
     <summary>Settings</summary>
