@@ -33,7 +33,7 @@ https://github.com/luisbocanegra/plasma-panel-modes-switcher/assets/15076387/ee9
 
 * Install from KDE Store or use `Get new widgets..`
   * ~~Plasma 5 version~~ maybe?
-  * [Plasma 6 version](#)
+  * [Plasma 6 version](https://store.kde.org/p/2130222)
 
 ### Manual install
 
