@@ -98,9 +98,10 @@ for (var id of panelIds) {
         if (${lengthEnabled})
             panel.lengthMode = ${mode} ? "${lengthMode1}" : "${lengthMode2}"
         if (${alignmentEnabled})
-            panel.alignment = "${mode}" ? "${alignmentMode1}" : "${alignmentMode2}"
+            panel.alignment = ${mode} ? "${alignmentMode1}" : "${alignmentMode2}"
 
         panel.reloadConfig()
+        break
     }
 }`
         console.log(togglePanelScript);

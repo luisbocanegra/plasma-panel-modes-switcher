@@ -44,7 +44,6 @@ KCM.SimpleKCM {
 
     property int cfg_alignmentMode1: plasmoid.configuration.alignmentMode1
     property var cfg_alignmentMode1Name: plasmoid.configuration.alignmentMode1Name
-
     property int cfg_alignmentMode2: plasmoid.configuration.alignmentMode2
     property var cfg_alignmentMode2Name: plasmoid.configuration.alignmentMode2Name
 
@@ -464,7 +463,7 @@ KCM.SimpleKCM {
             Kirigami.FormData.label: i18n("Mode 2:")
             text: i18n("Left")
             ButtonGroup.group: alignmentMode2Group
-            property string alignmentName: "fill"
+            property string alignmentName: "left"
             property int index: 0
             checked: Plasmoid.configuration.alignmentMode2 === index
             enabled: cfg_alignmentEnabled

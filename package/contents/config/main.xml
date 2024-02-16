@@ -89,12 +89,12 @@
     <entry
         name="lengthMode2"
         type="Int">
-      <default>0</default>
+      <default>1</default>
     </entry>
     <entry
         name="lengthMode2Name"
         type="String">
-      <default>fill</default>
+      <default>fit</default>
     </entry>
 
 
@@ -106,18 +106,18 @@
     <entry
         name="alignmentMode1Name"
         type="String">
-      <default>fill</default>
+      <default>left</default>
     </entry>
 
     <entry
         name="alignmentMode2"
         type="Int">
-      <default>0</default>
+      <default>1</default>
     </entry>
     <entry
         name="alignmentMode2Name"
         type="String">
-      <default>fill</default>
+      <default>center</default>
     </entry>
 
     <entry
@@ -143,7 +143,7 @@
     <entry
         name="lengthEnabled"
         type="Bool">
-      <default>false</default>
+      <default>true</default>
     </entry>
     <entry
         name="alignmentEnabled"
