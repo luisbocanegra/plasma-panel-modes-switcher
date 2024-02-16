@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg
+    xmlns="http://www.kde.org/standards/kcfg/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name="" />
+
+  <group name="General">
+    <entry
+        name="visibilityMode1"
+        type="Int">
+      <default>0</default>
+    </entry>
+    <entry
+        name="visibilityMode1Name"
+        type="String">
+      <default>none</default>
+    </entry>
+
+    <entry
+        name="visibilityMode2"
+        type="Int">
+      <default>2</default>
+    </entry>
+    <entry
+        name="visibilityMode2Name"
+        type="String">
+      <default>dodgewindows</default>
+    </entry>
+
+    <entry
+        name="heightMode1"
+        type="Int">
+      <default>32</default>
+    </entry>
+
+    <entry
+        name="heightMode2"
+        type="Int">
+      <default>48</default>
+    </entry>
+
+    
+    <entry
+        name="floatingMode1"
+        type="Bool">
+      <default>false</default>
+    </entry>
+
+    <entry
+        name="floatingMode2"
+        type="Bool">
+      <default>true</default>
+    </entry>
+
+    <entry
+        name="locationMode1"
+        type="Int">
+      <default>0</default>
+    </entry>
+    <entry
+        name="locationMode1Name"
+        type="String">
+      <default>none</default>
+    </entry>
+
+    <entry
+        name="locationMode2"
+        type="Int">
+      <default>0</default>
+    </entry>
+    <entry
+        name="locationMode2Name"
+        type="String">
+      <default>none</default>
+    </entry>
+
+    <entry
+        name="lengthMode1"
+        type="Int">
+      <default>0</default>
+    </entry>
+    <entry
+        name="lengthMode1Name"
+        type="String">
+      <default>fill</default>
+    </entry>
+
+    <entry
+        name="lengthMode2"
+        type="Int">
+      <default>0</default>
+    </entry>
+    <entry
+        name="lengthMode2Name"
+        type="String">
+      <default>fill</default>
+    </entry>
+
+
+    <entry
+        name="alignmentMode1"
+        type="Int">
+      <default>0</default>
+    </entry>
+    <entry
+        name="alignmentMode1Name"
+        type="String">
+      <default>fill</default>
+    </entry>
+
+    <entry
+        name="alignmentMode2"
+        type="Int">
+      <default>0</default>
+    </entry>
+    <entry
+        name="alignmentMode2Name"
+        type="String">
+      <default>fill</default>
+    </entry>
+
+    <entry
+        name="visibilityEnabled"
+        type="Bool">
+      <default>true</default>
+    </entry>
+    <entry
+        name="heightEnabled"
+        type="Bool">
+      <default>false</default>
+    </entry>
+    <entry
+        name="floatingEnabled"
+        type="Bool">
+      <default>true</default>
+    </entry>
+    <entry
+        name="locationEnabled"
+        type="Bool">
+      <default>false</default>
+    </entry>
+    <entry
+        name="lengthEnabled"
+        type="Bool">
+      <default>false</default>
+    </entry>
+    <entry
+        name="alignmentEnabled"
+        type="Bool">
+      <default>false</default>
+    </entry>
+
+    <entry
+        name="mode"
+        type="Bool">
+      <default>true</default>
+    </entry>
+    <!-- <entry name="max_clients" type="Int">
+        <default>3</default>
+      </entry>
+
+      <entry name="threshold_3d" type="Int">
+        <default>10</default>
+      </entry>
+      <entry name="threshold_video" type="Int">
+        <default>1</default>
+      </entry>
+      <entry name="threshold_video_enhance" type="Int">
+        <default>1</default>
+      </entry>
+      <entry name="threshold_blitter" type="Int">
+        <default>1</default>
+      </entry> -->
+
+  </group>
+</kcfg>

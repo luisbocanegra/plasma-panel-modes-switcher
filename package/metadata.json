@@ -1,0 +1,24 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "luisbocanegra17b@gmail.com",
+                "Name": "Luis Bocanegra"
+            }
+        ],
+        "BugReportUrl": "https://github.com/luisbocanegra/plasma-panel-mode-switcher/issues",
+        "Category": "Utilities",
+        "Description": "Switch between two panel profiles on the fly",
+        "Id": "luisbocanegra.panel.modes.switcher",
+        "EnabledByDefault": false,
+        "Icon":"desktop",
+        "License": "GPL-3.0",
+        "Name": "Panel modes switcher",
+        "Version": "0.1.0",
+        "Website": "https://github.com/luisbocanegra/plasma-panel-mode-switcher"
+    },
+    "X-Plasma-NotificationArea": "true",
+    "X-Plasma-NotificationAreaCategory": "SystemServices",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
