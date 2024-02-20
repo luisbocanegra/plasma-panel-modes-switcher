@@ -46,7 +46,10 @@ PlasmoidItem {
 
     property var panelPosition: {}
 
-    toolTipSubText: onDesktop ? "<font color='"+Kirigami.Theme.neutralTextColor+"'>Panel not found, this widget must be child of a panel</font>" : Plasmoid.metaData.description //+ "<br>screen:" + panelPosition.screen.toString() + " location:" + panelPosition.location.toString()
+    property int nextProperty: 0
+    property bool isLoaded: false
+
+    toolTipSubText: onDesktop ? "<font color='"+Kirigami.Theme.neutralTextColor+"'>Panel not found, this widget must be child of a panel</font>" : Plasmoid.metaData.description
     toolTipTextFormat: Text.RichText
 
     compactRepresentation: CompactRepresentation {
@@ -58,8 +61,9 @@ PlasmoidItem {
 
     onModeChanged: {
         if (!onDesktop) {
+            if (!isLoaded) return
             panelPosition = getPanelPosition()
-            togglePanel(panelPosition.screen, panelPosition.location)
+            setPropertyTimer.start()
             executable.exec("qdbus org.kde.plasmashell /org/kde/osdService org.kde.osdService.showText swap-panels 'Panel mode "+(mode ? "1" : "2")+"'")
         } else {
             executable.exec("qdbus org.kde.plasmashell /org/kde/osdService org.kde.osdService.showText error 'Panel not found, this widget must be child of a panel'")
@@ -81,31 +85,32 @@ PlasmoidItem {
         }
     }
     
-    function togglePanel(screen, location) {
-        var togglePanelScript = `
-var location = "${location}"
+    function setPanelMode() {
+        var setPanelModeScript = `
 for (var id of panelIds) {
     var panel = panelById(id);
-    if (panel.screen === ${screen} && panel.location === "${location}" ) {
-        if (${visibilityEnabled})
+    if (panel.screen === ${panelPosition.screen} && panel.location === "${panelPosition.location}" ) {
+        if (${nextProperty} === 0 && ${visibilityEnabled})
             panel.hiding = ${mode} ? "${visibilityMode1}" : "${visibilityMode2}"
-        if (${heightEnabled})
+        if (${nextProperty} === 1 && ${heightEnabled})
             panel.height = ${mode} ? ${heightMode1} : ${heightMode2}
-        if (${floatingEnabled})
-            panel.floating = ${mode} ? ${floatingMode1} : ${floatingMode2}
-        if (${locationEnabled})
-            panel.location = ${mode} ? "${locationMode1}" : "${locationMode2}"
-        if (${lengthEnabled})
+        if (${nextProperty} === 2 && ${lengthEnabled})
             panel.lengthMode = ${mode} ? "${lengthMode1}" : "${lengthMode2}"
-        if (${alignmentEnabled})
+        if (${nextProperty} === 3 && ${locationEnabled})
+            panel.location = ${mode} ? "${locationMode1}" : "${locationMode2}"
+        if (${nextProperty} === 4 && ${floatingEnabled})
+            panel.floating = ${mode} ? ${floatingMode1} : ${floatingMode2}
+        if (${nextProperty} === 5 && ${alignmentEnabled})
             panel.alignment = ${mode} ? "${alignmentMode1}" : "${alignmentMode2}"
-
-        panel.reloadConfig()
         break
     }
 }`
-        console.log(togglePanelScript);
-        executable.exec("qdbus org.kde.plasmashell /PlasmaShell evaluateScript '" + togglePanelScript + "'")
+        console.log(setPanelModeScript);
+        executable.exec("qdbus org.kde.plasmashell /PlasmaShell evaluateScript '" + setPanelModeScript + "'")
+        if (nextProperty == 5) {
+            setPropertyTimer.stop()
+        }
+        nextProperty = (nextProperty < 5) ? (nextProperty + 1) : 0
     }
 
     function getPanelPosition()
@@ -137,7 +142,18 @@ for (var id of panelIds) {
         running: true;
         repeat: false;
         onTriggered: {
+            isLoaded = true
             panelPosition = getPanelPosition()
+        }
+    }
+
+    Timer {
+        id: setPropertyTimer
+        interval: 50;
+        running: false;
+        repeat: true;
+        onTriggered: {
+            setPanelMode()
         }
     }
 }
