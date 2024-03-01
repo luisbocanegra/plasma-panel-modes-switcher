@@ -15,7 +15,7 @@
         "Icon":"desktop",
         "License": "GPL-3.0",
         "Name": "Panel modes switcher",
-        "Version": "0.1.0",
+        "Version": "0.1.1",
         "Website": "https://github.com/luisbocanegra/plasma-panel-modes-switcher"
     },
     "X-Plasma-NotificationArea": "true",
