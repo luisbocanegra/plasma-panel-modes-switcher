@@ -36,6 +36,7 @@ PlasmoidItem {
 
     property var alignmentMode1: plasmoid.configuration.alignmentMode1Name
     property var alignmentMode2: plasmoid.configuration.alignmentMode2Name
+    property string qdbusExec: plasmoid.configuration.qdbusExecutable
 
     property bool mode: plasmoid.configuration.mode
     property string iconName: !onDesktop ? (mode ? "mode1" : "mode2") : "error"
@@ -61,9 +62,9 @@ PlasmoidItem {
             if (!isLoaded) return
             panelPosition = getPanelPosition()
             setPropertyTimer.start()
-            executable.exec("qdbus org.kde.plasmashell /org/kde/osdService org.kde.osdService.showText swap-panels 'Panel mode "+(mode ? "1" : "2")+"'")
+            executable.exec(qdbusExec + " org.kde.plasmashell /org/kde/osdService org.kde.osdService.showText swap-panels 'Panel mode "+(mode ? "1" : "2")+"'")
         } else {
-            executable.exec("qdbus org.kde.plasmashell /org/kde/osdService org.kde.osdService.showText error 'Panel not found, this widget must be child of a panel'")
+            executable.exec(qdbusExec + " org.kde.plasmashell /org/kde/osdService org.kde.osdService.showText error 'Panel not found, this widget must be child of a panel'")
         }
         plasmoid.configuration.mode = mode
     }
@@ -103,7 +104,7 @@ for (var id of panelIds) {
     }
 }`
         console.log(setPanelModeScript);
-        executable.exec("qdbus org.kde.plasmashell /PlasmaShell evaluateScript '" + setPanelModeScript + "'")
+        executable.exec(qdbusExec + " org.kde.plasmashell /PlasmaShell evaluateScript '" + setPanelModeScript + "'")
         if (nextProperty == 5) {
             setPropertyTimer.stop()
         }

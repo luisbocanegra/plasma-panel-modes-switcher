@@ -46,18 +46,21 @@ KCM.SimpleKCM {
     property var cfg_alignmentMode1Name: plasmoid.configuration.alignmentMode1Name
     property int cfg_alignmentMode2: plasmoid.configuration.alignmentMode2
     property var cfg_alignmentMode2Name: plasmoid.configuration.alignmentMode2Name
+    property string cfg_qdbusExecutable: qdbusExecutable.text
 
 
     Kirigami.FormLayout {
         id: generalPage
         Layout.alignment: Qt.AlignTop
 
-        // Label {
-        //     text: i18n("Show engine icon when utilization is above the specified thresholds.\nThe priority is the order in which they appear here (descending)")
-        //     font: Kirigami.Theme.smallFont
-        //     opacity: 0.7
-        // }
-
+        TextArea {
+            Kirigami.FormData.label: i18n("Qqbus executable name:")
+            Layout.minimumWidth: 300
+            id: qdbusExecutable
+            text: cfg_qdbusExecutable
+            onTextChanged: cfg_qdbusExecutable = text
+            Kirigami.SpellCheck.enabled: false
+        }
 
         // Visibility ----------------------------------------------------------
         Kirigami.Separator {
