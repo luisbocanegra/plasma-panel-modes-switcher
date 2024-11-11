@@ -44,7 +44,7 @@ https://github.com/luisbocanegra/plasma-panel-modes-switcher/assets/15076387/ee9
     ```
 
     ```dnf
-    cmake extra-cmake-modules libplasma-devel qt6-qdbusviewer
+    dnf install -y cmake extra-cmake-modules libplasma-devel qt6-qdbusviewer
     ```
 
 2. Run `./install.sh`
