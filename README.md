@@ -43,6 +43,10 @@ https://github.com/luisbocanegra/plasma-panel-modes-switcher/assets/15076387/ee9
     cmake extra-cmake-modules libplasma
     ```
 
+    ```dnf
+    cmake extra-cmake-modules libplasma-devel qt6-qdbusviewer
+    ```
+
 2. Run `./install.sh`
 
 ## Resources
