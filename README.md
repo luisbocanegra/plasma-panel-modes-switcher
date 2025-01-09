@@ -2,6 +2,9 @@
 
 Switch between two KDE Plasma panel profiles on the fly
 
+> [!IMPORTANT]
+> The functionality of this widget is being added to [Panel Colorizer](https://github.com/luisbocanegra/plasma-panel-colorizer) widget, after that this widget will become unmaintained and archived. https://github.com/luisbocanegra/plasma-panel-modes-switcher/issues/5
+
 ## Demo
 
 https://github.com/luisbocanegra/plasma-panel-modes-switcher/assets/15076387/ee9fa2c4-867d-4cf8-abc5-86bcfaa90031
